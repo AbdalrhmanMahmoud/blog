@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+	{% block title %}
+log in
+{% endblock  %}
+
+
+
+
+	{% block body %}
+
+<style>#content{
+font-size:3px;
+color:#090
+}</style>
+
+
+<div class="container col-sm-6 ">
+	<!--<h1>log in </h1>-->
+	<form method="post" enctype="multipart/form-data">{% csrf_token %}
+	    {{ form|crispy  }}
+	    <input type="submit"  class="btn btn-primary" value="log" />
+	</form>
+
+
+</div>
+
+
+{% endblock %}
+

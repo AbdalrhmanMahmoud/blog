@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+/home/geek/Desktop/python/django_website/entrepreneurs/blog/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3353553763.index

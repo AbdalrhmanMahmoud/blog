@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+	{% block title %}
+		create post
+	{% endblock  %}
+
+    {% block extra_head %}
+
+{{ form.media }}
+{% endblock  %}
+
+
+	{% block body %}
+
+<style>#content{
+font-size:3px;
+color:#090
+}</style>
+
+
+<div class="container col-sm-6 ">
+	<h1>create new post</h1>
+	<form method="post" enctype="multipart/form-data">{% csrf_token %}
+	    {{ form|crispy  }}
+	    <input type="submit"  class="btn btn-primary" value="creat" />
+	</form>
+
+
+</div>
+
+
+{% endblock %}
+

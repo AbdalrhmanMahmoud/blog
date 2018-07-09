@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+	{% block title %}
+		ditails
+	{% endblock  %}
+	{% block body %}
+
+	<style>
+
+	
+.det{
+		max-height: 300px !important;
+		margin-bottom: 40px!important;
+	}
+	</style>
+	<div class="container details">
+		<div class="card col-sm-12">
+	    <div class="card-body">
+	    		<!-- lloking for the post image  -->
+				  {% if instance.image %}
+	          <img class="card-img-top det" src="{{ instance.image.url }}" alt="Card image cap" target="_blank"/>
+		      {% endif %}
+
+		      <h2 class="card-title">{{  instance.title }}</h2>
+	        <p class="card-text mark-con">{{  instance.content }}</p>
+          <h5>Create by: {{ instance.user.get_full_name }} </h5>
+          <h6>
+          	<span class="fb-like" data-href="{{requst.bulid_absolut_url}}" data-layout="button" 		data-action="like" data-size="large" data-show-faces="true" data-share="true">
+          	</span>
+          </h6>
+          <p class="card-text">
+              <small class="text-muted">Last updated {{  instance.timestamp }}</small>
+	        </p>
+<!-- {{requst.bulid_absolut_url}}
+ -->
+ 					<!-- facbook coooments  -->
+					<div class="fb-comments" data-href="{{requst.bulid_absolut_url}}" data-numposts="5"></div>
+	      </div>
+			</div><!-- end card  -->
+		</div> <!-- end container  -->
+
+	{% endblock body %}

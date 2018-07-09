@@ -1,0 +1,119 @@
+
+{% extends "base.html" %}
+  {% block title %}
+    website name
+  {% endblock  %}
+
+<style type="text/css">
+
+  .card{
+    margin-left: 10px !important;
+  }
+.cccz{
+      margin-bottom: 60px !important;
+      border-bottom: 10px solid #f00 !important;
+
+}
+.arx{
+width:70%
+}
+</style>
+     {% block search %}
+<!-- <canvas id="c"> </canvas> -->
+    <div class="headSearch ">
+      <div class="container">
+              <!-- shearch  -->
+      <form class="form-inline search text-center">
+           <input class="form-control col-sm-8 " type="search"  name="find"
+                  placeholder="حاجه ضايعه منك ياكابتن " aria-label="Search" value="{{ request.GET.find}}">
+           <button class="btn btn-outline-danger my-2 col-sm-2 ex" type="submit" >دور معايا</button>
+      </form>
+      </div>
+    </div>
+   
+
+     {% endblock search %}
+     {% block body %}
+
+      <!-- start post loop  -->
+    <div >
+      <div class="container">
+      <div class="row ">
+          <div class="col-12 col-md-8">
+        {% for el  in x %}
+        <div class="col-sm-6 col-md-12 cccz arx">
+          <div class="card ">
+            <h2 class="card-title">
+                <a href=" {{el.get_absolute_url}}">  {{ el.title }}</a>
+            </h2>
+            <h6>Create by: {{ el.user.get_full_name }} </h6>
+            <p class="card-text">
+              <small class="text-muted">Last updated {{ el.updated }} </small>
+            </p>
+                  <!-- looking for the post image  -->
+              {% if el.image %}
+                <img class="card-img-top" src="{{ el.image.url }}" alt="Card image cap"/>
+              {% endif %}
+              <!-- the content -->
+            <div class="card-body">
+              <!--<p class="card-text mark-con">{{ el.get_markdown   }}</p>-->
+                <p class="card-text mark-con">{{ el.content | truncatechars:150  }}</p>
+
+               <a href=" {{el.get_absolute_url}}" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        {% endfor %}</div>
+        <div class="col-6 col-md-4 text-center">
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+  
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+            <h1>sid Bar</h1>
+         
+          </div>
+      </div><!-- end loop in the Postes -->
+
+    </div>
+
+    <!-- pagination last part of the page  -->
+  <div class="container text-center">
+    <div class="pagination">
+      <span class="step-links">
+        {% if x.has_previous %}
+        <a href="?page={{ x.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+        Page {{ x.number }} of {{ x.paginator.num_pages }}.
+        </span>
+
+        {% if x.has_next %}
+        <a href="?page={{ x.next_page_number }}">next</a>
+        {% endif %}
+      </span>
+    </div>
+
+  </div>
+
+    </dir>
+{% endblock  %}
+
+

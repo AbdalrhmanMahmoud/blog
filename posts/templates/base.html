@@ -1,0 +1,366 @@
+<!--
+base.html:my header and foooter for blog website
+using:bootstrap4 & JQURY  by CDN
+ -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    {% load static %}
+    <title> {% block title %} {% endblock  %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet"  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+     <link rel="stylesheet"  href=' {% static "css/style.css" %}'/>
+    {% block extra_head %} {% endblock  %}
+</head>
+<body>
+  <!-- facboook cooment and share script  -->
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+          fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+    </script>
+     {% block search %}
+
+
+      {% endblock  %}
+
+
+   <!-- satrt  nave bar -->
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nave_coustmize ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="        #navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"         aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse mx-auto" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto ">
+          <!-- nave list -->
+
+          <a class="nav-item nav-link " href="{% url 'about' %}" >ﻋﻦ اﻟﻔﺮﻳﻖ</a>
+          <a class="nav-item nav-link" href="{% url 'comic' %}">ﻛﻮﻣﻴﻚ </a>
+          <a class="nav-item nav-link" href="{% url 'success' %}">ﻗﺼﺺ ﻧﺠﺎﺡ</a>
+          <a class="nav-item nav-link" href="{% url 'sport' %}">ﺭﻳﺎﺿﻪ </a>
+          <a class="nav-item nav-link" href="{% url 'art' %}">ﻓﻦ </a>
+          <a class="nav-item nav-link active" href="{% url 'list' %}">اﻟﺮﺋﻴﺴﻴﻪ </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+<!--  -->
+<!--  -->
+  <!-- nave Par 3 -->
+<!-- / -->
+
+  <!-- end nave bare  -->
+-->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Mega Dropdown</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Category</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category 1
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <span class="text-uppercase text-white">Category 1</span>
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <a href="">
+                  <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                </a>
+                <p class="text-white">Short image call to action</p>
+
+              </div>
+              <!-- /.col-md-4  -->
+            </div>
+          </div>
+          <!--  /.container  -->
+
+
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category 2
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <span class="text-uppercase text-white">Category 2</span>
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <a href="">
+                  <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                </a>
+                <p class="text-white">Short image call to action</p>
+
+              </div>
+              <!-- /.col-md-4  -->
+            </div>
+          </div>
+          <!--  /.container  -->
+
+
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category 3
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+               <span class="text-uppercase text-white">Category 3</span>
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+                <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link item</a>
+                </li>
+              </ul>
+              </div>
+              <!-- /.col-md-4  -->
+              <div class="col-md-4">
+
+                <a href="">
+                  <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                </a>
+                <p class="text-white">Short image call to action</p>
+                
+              </div>
+              <!-- /.col-md-4  -->
+            </div>
+          </div>
+          <!--  /.container  -->
+
+
+        </div>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+
+
+</nav>
+
+{% block body %}
+
+{% endblock  %}
+
+
+  <!-- start footer -->
+  <footer id='footer' class="footer text-center">
+    <div class=' container'>
+      <div class='row'>
+          <!-- follwo  -->
+        <div class='col-12 col-sm-3 text-right Follow'>
+          <h3 class='text-center'>ﺗﺎﺑﻌﻨﺎ </h3>
+
+            <div class="icons">
+               <a href="https://github.com/AbdalrhmanMahmoud" target="_blank"><i class="fa fa-instagram fa-4x"></i></a>
+
+          <a href="https://github.com/AbdalrhmanMahmoud" target="_blank"><i class="fa fa-facebook-square fa-4x"></i></a>
+
+          <i class="fa " aria-hidden="true"></i>
+         <a href="https://stackoverflow.com/users/story/7876191" target="_blank"><i class="fa fa-twitter-square fa-4x"></i></a>
+
+        </div>
+
+        </div>
+        <!-- end fllow  -->
+
+
+        <!-- subscrib  -->
+        <div class='col-12 col-sm-3 column'>
+          <h3 class='text-center'>ﻋﻠﻔﻜﺮﻩ اﻧﺎ ﻛﺴﻼﻥ ﻑ ﻣﺶ ﻛﻞ ﺷﻮﻳﻪ ﻫﺒﻌﺘﻠﻚ  </h3>
+          <form>
+            <div class='form-group'>
+              <input class='form-control' placeholder='ﻟﻮ ﻣﻔﻴﻬﺎﺵ اﺳﺎﺋﻪ اﺩاﺏ اﻛﺘﺐ اﻟﻤﻴﻞ ﻫﻨﺎ  ' title='No spam, we promise!' type='text'>
+            </div>
+            <div class='form-group'>
+              <button class='btn btn-success' data-target='#alertModal' data-toggle='modal' type='button'>ﺩﻭﺱ ﻋﺸﺎﻥ ﺗﺸﺘﺮﻙ  </button>
+            </div>
+          </form>
+        </div>
+        <!-- about us  -->
+
+
+        <div class='col-6 col-sm-3 column'>
+          <h3 class='text-uppercase'> <a class="nav-item nav-link " href="{% url 'about' %}" >ﻋﻨﺎ </a> </h3>
+          <ul class='list-unstyled'>
+            <li>
+              <a href='#'>ﺗﻮاﺻﻞ ﻣﻌﻨﺎ </a>
+            </li>
+
+            <li>
+              <a href="{% url 'policy' %}">ﺳﻴﺎﺳﺔ اﻟﺨﺼﻮﺻﻴﻪ </a>
+            </li>
+
+          </ul>
+        </div>
+
+              <div class='col-6 col-sm-3'>
+          <h3 class='text-right'>اﺳﻢ اﻟﻤﻮﻗﻊ </h3>
+          <ul class='list-unstyled text-right'>
+            <li>
+              <a href="{% url 'list' %}">اﺣﺪﺙ اﻟﻤﻘﺎﻻﺕ</a>
+            </li>
+            <li>
+              <a href="{% url 'art' %}">ﻓﻦ</a>
+            </li>
+            <li>
+              <a href="{% url 'sport' %}">ﺭﻳﺎﺿﻪ </a>
+            </li>
+            <li>
+              <a href="{% url 'success' %}">ﻗﺼﺺ ﻧﺠﺎﺡ </a>
+            </li>
+              <li>
+              <a href="{% url 'comic' %}">ﻛﻮﻣﻴﻚ </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <br>
+
+  <div class="container text-center">
+     <div > Copyright  <a href="https://www.upwork.com/fl/frontendwebdeveloper" target="_blank
+          "><span> Abdalrhman </span></a> &copy; 2018
+           </div><br><br>
+  </div>
+    </div>
+  </footer>
+
+  <!-- Footer -->
+
+      <!-- scripts  -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <!--<script  src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="  crossorigin="anonymous"></script>-->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.5.1/jquery.nicescroll.js"></script>-->
+  <script type="text/javascript" src=' {% static "js/jquery.nicescroll.min.js" %}'></script>
+    <script type="text/javascript" src=' {% static "js/main.js" %}'></script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+              $(".mark-con").each(function(){
+                  var con = $(this).text();
+                  var  markContent = marked(con);
+                  $(this).html(markContent);
+                  // console.log
+            })
+            $(".mark-con img").each(function(){
+
+                $(this).addClass("img-responsive");
+            })
+
+          })
+
+
+
+        </script>
+</body>
+</html>
