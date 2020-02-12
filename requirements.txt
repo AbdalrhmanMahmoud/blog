@@ -5,7 +5,7 @@ chardet==2.3.0
 chrome-gnome-shell==0.0.0
 cryptography==2.0.2
 dj-database-url==0.5.0
-Django==1.10
+Django==1.11.28
 django-crispy-forms==1.7.0
 django-markdown==0.8.4
 django-markdown-deux==1.0.5
